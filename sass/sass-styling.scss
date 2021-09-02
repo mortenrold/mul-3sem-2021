@@ -1,0 +1,86 @@
+// variabler
+$my-color: #616fbd;
+$my-size: 16px;
+
+// mixins
+@mixin my-font {
+    font-family: helvertica, arial, sans-serif;
+    font-size: 1.1em;
+    font-weight: 200;
+}
+// mixin med indbygget variabel
+@mixin rounded-corners ($radius: 5px) {
+    // vendor prefixes
+    -webkit-border-radius: $radius;
+    -moz-border-radius: $radius;
+    border-radius: $radius;
+}
+
+/* en normal CSS-kommentar */
+h1 {
+    font-family: helvetica, arial, sans-serif;
+    font-weight: 100;
+    color: $my-color; 
+}
+p {
+    font-family: georgia, serif;
+    color: $my-color; 
+    // her kommer en mixin
+    @include my-font;
+}
+button {
+    width: 120px;
+    padding: 10px 0;
+    background: $my-color;
+    border: none;
+    color: whitesmoke;
+    cursor: pointer;
+    @include rounded-corners;
+    // "&" betyder, at ":hover" kommer efter "button" uden mellemrum
+    &:hover {
+        // lighten er en Sass-function
+        background: lighten($my-color, 10%);
+    }
+}
+
+
+// styling med normal CSS
+/*
+.menu {
+    list-style: none;
+}
+.menu li {
+    display: inline;
+}
+.menu li a {
+    color: #333;
+    text-decoration: none;
+    font-family: helvetica, sans-serif;
+} */
+
+// styling på sass-måden ("nesting")
+.menu {
+    list-style: none;
+    li {
+        display: inline;
+        a {
+            color: #333;
+            text-decoration: none;
+            @include my-font;
+        }
+    }
+}
+
+.kasse {
+    width: 300px;
+    height: 200px;
+    background: $my-color;
+    // henter mixin og laver om på dens indbyggede variabel
+    @include rounded-corners(20px);
+}
+
+.alt-h1 {
+    @extend p;
+    // operator
+    font-size: $my-size+7px;
+}

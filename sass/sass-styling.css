@@ -1,0 +1,61 @@
+/* en normal CSS-kommentar */
+h1 {
+  font-family: helvetica, arial, sans-serif;
+  font-weight: 100;
+  color: #616fbd; }
+
+p, .alt-h1 {
+  font-family: georgia, serif;
+  color: #616fbd;
+  font-family: helvertica, arial, sans-serif;
+  font-size: 1.1em;
+  font-weight: 200; }
+
+button {
+  width: 120px;
+  padding: 10px 0;
+  background: #616fbd;
+  border: none;
+  color: whitesmoke;
+  cursor: pointer;
+  -webkit-border-radius: 5px;
+  -moz-border-radius: 5px;
+  border-radius: 5px; }
+  button:hover {
+    background: #8590cc; }
+
+/*
+.menu {
+    list-style: none;
+}
+.menu li {
+    display: inline;
+}
+.menu li a {
+    color: #333;
+    text-decoration: none;
+    font-family: helvetica, sans-serif;
+} */
+.menu {
+  list-style: none; }
+  .menu li {
+    display: inline; }
+    .menu li a {
+      color: #333;
+      text-decoration: none;
+      font-family: helvertica, arial, sans-serif;
+      font-size: 1.1em;
+      font-weight: 200; }
+
+.kasse {
+  width: 300px;
+  height: 200px;
+  background: #616fbd;
+  -webkit-border-radius: 20px;
+  -moz-border-radius: 20px;
+  border-radius: 20px; }
+
+.alt-h1 {
+  font-size: 23px; }
+
+/*# sourceMappingURL=sass-styling.css.map */
