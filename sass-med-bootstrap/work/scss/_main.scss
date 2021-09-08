@@ -1,0 +1,14 @@
+h1 {
+    color: red;
+}
+.btn-primary {
+    background-color: $mortens-farve;
+    border-color: darken($mortens-farve, 5%);
+    &:hover {
+        background-color: lighten($mortens-farve, 5%);
+        border-color: $mortens-farve;
+    }
+}
+.card {
+    @include my-rotate;
+}

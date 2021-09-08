@@ -1,0 +1,8 @@
+// variabler 
+$mortens-farve: orange;
+
+// mixins 
+@mixin my-rotate {
+    transform: rotate(5deg);  
+    box-shadow: 3px 3px 5px rgba(0, 0, 0, 0.3);
+}
