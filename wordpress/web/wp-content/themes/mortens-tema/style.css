@@ -60,6 +60,7 @@ Nicolas Gallagher and Jonathan Neal https://necolas.github.io/normalize.css/
  * 1. Correct the line height in all browsers.
  * 2. Prevent adjustments of font size after orientation changes in iOS.
  */
+@import url("https://fonts.googleapis.com/css2?family=Lora&display=swap");
 html {
   line-height: 1.15;
   -webkit-text-size-adjust: 100%;
@@ -966,6 +967,17 @@ textarea {
   margin-bottom: 1.5em;
 }
 
+body {
+  border-top: 3px solid #5da398;
+}
+
+.site {
+  color: #333;
+  max-width: 1160px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
 .site-header {
   display: -webkit-box;
   display: -ms-flexbox;
@@ -977,6 +989,16 @@ textarea {
   -webkit-box-direction: normal;
       -ms-flex-direction: column;
           flex-direction: column;
+}
+.site-header .site-branding a {
+  color: #333;
+  text-decoration: none;
+  font-weight: 500;
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, "Noto Sans", sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
+}
+.site-header .site-branding a::after {
+  content: ".net";
+  color: gray;
 }
 .site-header .main-navigation {
   display: -webkit-box;
@@ -994,6 +1016,76 @@ textarea {
   top: 15px;
   right: 0;
 }
+.site-header .main-navigation a {
+  margin-left: 30px;
+  color: #333;
+  text-decoration: none;
+}
+.site-header .main-navigation a:hover {
+  color: #5da398;
+}
+
+h1 {
+  font-size: 58px;
+  line-height: 120%;
+}
+
+p {
+  font-family: lora, georgia, serif;
+  font-size: 18px;
+}
+
+.narrow {
+  max-width: 800px;
+  margin: 0 auto;
+}
+
+.flowchart {
+  margin: 30px 0;
+}
+.flowchart .flow-element {
+  border: 1px solid #333;
+  padding: 0 15px;
+}
+.flowchart .flow-element h3 {
+  margin: 15px 0 7.5px 0;
+}
+.flowchart .flow-element p {
+  font-family: inherit;
+  font-size: 0.9em;
+  margin: 0 0 30px 0;
+}
+.flowchart .arrow {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  padding: 5px;
+  font-size: 1.2em;
+  color: #757575;
+}
+.flowchart .part-1 {
+  border-color: #7fb0c0;
+  background: #d8e7ec;
+}
+.flowchart .part-2 {
+  border-color: #ea7922;
+  background: #f6c29b;
+}
+.flowchart .part-3 {
+  border-color: #b196c6;
+  background: #f1ecf5;
+}
+.flowchart .part-4 {
+  border-color: #5da398;
+  background: #b2d3ce;
+}
+.flowchart .part-5 {
+  border-color: #f1bc16;
+  background: #f9e093;
+}
 
 @media screen and (min-width: 600px) {
   .site-header {
@@ -1002,17 +1094,39 @@ textarea {
         -ms-flex-direction: row;
             flex-direction: row;
   }
-
-  .main-navigation {
+  .site-header .main-navigation {
     -webkit-box-orient: horizontal;
     -webkit-box-direction: normal;
         -ms-flex-direction: row;
             flex-direction: row;
-    -webkit-box-pack: center;
-        -ms-flex-pack: center;
-            justify-content: center;
-    -webkit-box-align: end;
-        -ms-flex-align: end;
-            align-items: flex-end;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
+    -webkit-box-pack: end;
+        -ms-flex-pack: end;
+            justify-content: flex-end;
+  }
+  .site-header .main-navigation a {
+    margin-left: 30px;
+    color: #333;
+    text-decoration: none;
+  }
+}
+@media screen and (min-width: 990px) {
+  .flowchart {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+  }
+  .flowchart .flow-element {
+    width: 18%;
+  }
+  .flowchart .arrow {
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
+    height: 100%;
+    -webkit-transform: rotate(-90deg);
+            transform: rotate(-90deg);
   }
 }
